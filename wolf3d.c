@@ -7,7 +7,8 @@ int			key_press(int key, void *param)
 	w = (t_pr *)param;
 	if (key == 53)
 		exit(0);
-	if (key == 123 || key == 126 || key == 124 || key == 125)
+	if (key == 123 || key == 126 || key == 124 || key == 125 ||
+		key == 0 || key == 13 || key == 2 || key == 1)
 		move(key, w);
 	if (key == 257 || key == 258)
 		w->movespeed = 0.3;
@@ -45,7 +46,7 @@ int main(int argc, char **argv)
 	w.argv = argv[1];
 	w.prevxmouse = 0;
 	w.movespeed = 0.1;
-	w.rotspeed = 0.01;
+	w.rotspeed = 0.1;
 	w.posx = 3;
 	w.posy = 2;
 	w.dirx = -1;

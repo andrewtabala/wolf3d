@@ -4,7 +4,7 @@ void		move(int i, t_pr *w)
 {
 	mlx_clear_window(w->mlx_ptr, w->win_ptr);
 	ft_bzero(w->imgdata, sizeof(int) * WW * WH);
-	if (i == 123)
+	if (i == 123 || i == 0)
 	{
 		w->olddirx = w->dirx;
 		w->dirx = w->dirx * cos(w->rotspeed) - w->diry * sin(w->rotspeed);
@@ -13,14 +13,14 @@ void		move(int i, t_pr *w)
 		w->planex = w->planex * cos(w->rotspeed) - w->planey * sin(w->rotspeed);
 		w->planey = w->oldplanex * sin(w->rotspeed) + w->planey * cos(w->rotspeed);
 	}
-	else if (i == 126)
+	else if (i == 126 || i == 13)
 	{
 		if(w->map[(int)(w->posx + w->dirx * w->movespeed)][(int)w->posy] == 0)
 			w->posx += w->dirx * w->movespeed;
 		if(w->map[(int)w->posx][(int)(w->posy + w->diry * w->movespeed)] == 0)
 			w->posy += w->diry * w->movespeed;
 	}
-	else if (i == 124)
+	else if (i == 124 || i == 2)
 	{
 		w->olddirx = w->dirx;
 		w->dirx = w->dirx * cos(-w->rotspeed) - w->diry * sin(-w->rotspeed);
@@ -29,7 +29,7 @@ void		move(int i, t_pr *w)
 		w->planex = w->planex * cos(-w->rotspeed) - w->planey * sin(-w->rotspeed);
 		w->planey = w->oldplanex * sin(-w->rotspeed) + w->planey * cos(-w->rotspeed);
 	}
-	else if (i == 125)
+	else if (i == 125 || i == 1)
 	{
 		if(w->map[(int)(w->posx - w->dirx * w->movespeed)][(int)w->posy] == 0)
 			w->posx -= w->dirx * w->movespeed;

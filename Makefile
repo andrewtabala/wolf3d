@@ -23,6 +23,7 @@ $(NAME):
 		parsemap.c \
 		textures.c \
 		keyactions.c \
+		mousemove.c \
 		draw.c \
 		drawline.c \
 		img.c \

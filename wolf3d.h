@@ -72,12 +72,15 @@ typedef struct  	s_pr
 
 	int		mapwidth;
 	int		mapheight;
+
+	int		prevxmouse;
 	
 	char	*argv;
 	int		color;
 }					t_pr;
 
 void	readmap(t_pr *w);
+int		mouse_move(int x, int y, t_pr *w);
 void	count(t_pr *w);
 void	img(t_pr *w);
 

@@ -28,6 +28,7 @@ void		setup_controls(t_pr *w)
 {
 	mlx_hook(w->win_ptr, 2, 0, key_press, w);
 	mlx_hook(w->win_ptr, 3, 0, key_release, w);
+	mlx_hook(w->win_ptr, 6, 0, mouse_move, w);
 }
 
 int main(int argc, char **argv)
@@ -42,8 +43,9 @@ int main(int argc, char **argv)
 	w.mlx_ptr = mlx_init();
 	w.win_ptr = mlx_new_window(w.mlx_ptr, w.win_width, w.win_height, "wolf3d");
 	w.argv = argv[1];
+	w.prevxmouse = 0;
 	w.movespeed = 0.1;
-	w.rotspeed = 0.1;
+	w.rotspeed = 0.01;
 	w.posx = 3;
 	w.posy = 2;
 	w.dirx = -1;

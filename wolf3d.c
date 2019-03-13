@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 	w.mlx_ptr = mlx_init();
 	w.win_ptr = mlx_new_window(w.mlx_ptr, w.win_width, w.win_height, "wolf3d");
 	w.argv = argv[1];
-	w.prevxmouse = 0;
+	w.prevxmouse = 256;
 	w.movespeed = 0.1;
 	w.rotspeed = 0.1;
 	w.posx = 3;

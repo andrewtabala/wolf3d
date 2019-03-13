@@ -13,6 +13,6 @@ void	settextures(t_pr *w)
 	w->img_redbrick = mlx_xpm_file_to_image(w->mlx_ptr, "textures/redbrick.xpm", &wid, &hei);
 	w->img_mossy = mlx_xpm_file_to_image(w->mlx_ptr, "textures/mossy.xpm", &wid, &hei);
 	wid = 512;
-	hei = 512;
+	hei = 384;
 	w->img_sky = mlx_xpm_file_to_image(w->mlx_ptr, "textures/sky.xpm", &wid, &hei);
 }

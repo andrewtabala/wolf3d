@@ -53,10 +53,7 @@ void	draw(t_pr *w)
 					w->mapy += w->stepy;
 					w->side = 1;
 				}
-				printf("%d %d\n", w->mapwidth, w->mapheight);
-				printf("%s\n", w->map[w->mapx]);
-				printf("%d %d %c %d\n", w->mapx, w->mapy, w->map[w->mapx][w->mapy], ft_atoi(&w->map[w->mapx][w->mapy]));
-				if (ft_atoi(&w->map[w->mapx][w->mapy]) != 0)
+				if (w->map[w->mapx][w->mapy] != 0)
 					w->hit = 1;
 			}
 			if (w->side == 0)
@@ -70,17 +67,17 @@ void	draw(t_pr *w)
 			w->drawend = w->lineheight / 2 + WH / 2;
 			if (w->drawend >= WH)
 				w->drawend = WH - 1;
-			if (ft_atoi(&w->map[w->mapx][w->mapy]) == 1)
+			if (w->map[w->mapx][w->mapy] == 1)
 				w->color = 10604827;
-			else if (ft_atoi(&w->map[w->mapx][w->mapy]) == 2)
+			else if (w->map[w->mapx][w->mapy] == 2)
 				w->color = 1778897;
-			else if (ft_atoi(&w->map[w->mapx][w->mapy]) == 3)
+			else if (w->map[w->mapx][w->mapy] == 3)
 				w->color = 13704097;
-			else if (ft_atoi(&w->map[w->mapx][w->mapy]) == 4)
+			else if (w->map[w->mapx][w->mapy] == 4)
 				w->color = 13703966;
-			else if (ft_atoi(&w->map[w->mapx][w->mapy]) == 5)
+			else if (w->map[w->mapx][w->mapy] == 5)
 				w->color = 13357339;
-			else if (ft_atoi(&w->map[w->mapx][w->mapy]) == 6)
+			else if (w->map[w->mapx][w->mapy] == 6)
 				w->color = 1823182;	
 			if (w->side == 1)
 				w->color /= 2;

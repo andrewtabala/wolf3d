@@ -20,6 +20,7 @@ $(NAME):
 		get_next_line/get_next_line.c \
 		libft/libft.a \
 		read.c \
+		parsemap.c \
 		textures.c \
 		keyactions.c \
 		draw.c \

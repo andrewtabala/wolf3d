@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 	w.argv = argv[1];
 	w.movespeed = 0.1;
 	w.rotspeed = 0.1;
-	w.posx = 2;
+	w.posx = 3;
 	w.posy = 2;
 	w.dirx = -1;
 	w.diry = 0;
@@ -52,6 +52,11 @@ int main(int argc, char **argv)
 	w.planey = 0.66;
 	setup_controls(&w);
 	readmap(&w);
+	/*if (parsemap(&w) == 1)
+	{
+		printf("%s\n", "Invalid map");
+		exit(0);
+	}*/
 	img(&w);
 	settextures(&w);
 	draw(&w);

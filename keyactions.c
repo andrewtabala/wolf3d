@@ -15,9 +15,9 @@ void		move(int i, t_pr *w)
 	}
 	else if (i == 126)
 	{
-		if(ft_atoi(&w->map[(int)(w->posx + w->dirx * w->movespeed)][(int)w->posy]) == 0)
+		if(w->map[(int)(w->posx + w->dirx * w->movespeed)][(int)w->posy] == 0)
 			w->posx += w->dirx * w->movespeed;
-		if(ft_atoi(&w->map[(int)w->posx][(int)(w->posy + w->diry * w->movespeed)]) == 0)
+		if(w->map[(int)w->posx][(int)(w->posy + w->diry * w->movespeed)] == 0)
 			w->posy += w->diry * w->movespeed;
 	}
 	else if (i == 124)
@@ -31,9 +31,9 @@ void		move(int i, t_pr *w)
 	}
 	else if (i == 125)
 	{
-		if(ft_atoi(&w->map[(int)(w->posx - w->dirx * w->movespeed)][(int)w->posy]) == 0)
+		if(w->map[(int)(w->posx - w->dirx * w->movespeed)][(int)w->posy] == 0)
 			w->posx -= w->dirx * w->movespeed;
-		if(ft_atoi(&w->map[(int)w->posx][(int)(w->posy - w->diry * w->movespeed)]) == 0)
+		if(w->map[(int)w->posx][(int)(w->posy - w->diry * w->movespeed)] == 0)
 			w->posy -= w->diry * w->movespeed;
 	}
 	draw(w);

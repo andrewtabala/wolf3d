@@ -15,7 +15,8 @@
 typedef struct  	s_pr
 {
 	int		fd;
-	char	**map;
+	int		**map;
+	char	**parsemap;
 
 	void	*mlx_ptr;
 	void	*win_ptr;
@@ -84,5 +85,6 @@ void	settextures(t_pr *w);
 void	draw(t_pr *w);
 void	drawline(int x, t_pr *w);
 void	move(int i, t_pr *w);
+int		parsemap(t_pr *w);
 
 #endif

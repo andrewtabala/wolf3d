@@ -1,5 +1,12 @@
 #include "wolf3d.h"
 
+ int closewin(void *param)
+{
+    (void)param;
+    exit(0);
+    return (0);
+}
+
 int			key_press(int key, void *param)
 {
 	t_pr	*w;
@@ -30,6 +37,7 @@ void		setup_controls(t_pr *w)
 	mlx_hook(w->win_ptr, 2, 0, key_press, w);
 	mlx_hook(w->win_ptr, 3, 0, key_release, w);
 	mlx_hook(w->win_ptr, 6, 0, mouse_move, w);
+	mlx_hook(w->win_ptr, 17, 0, closewin, w);
 }
 
 int main(int argc, char **argv)
@@ -38,13 +46,13 @@ int main(int argc, char **argv)
 	int 	wid = 64;
 	int 	hei = 64;
 
-	w.win_width = 512;
-	w.win_height = 384;
+	w.win_width = 1024;
+	w.win_height = 576;
 
 	w.mlx_ptr = mlx_init();
 	w.win_ptr = mlx_new_window(w.mlx_ptr, w.win_width, w.win_height, "wolf3d");
 	w.argv = argv[1];
-	w.prevxmouse = 256;
+	w.prevxmouse = w.win_width / 2;
 	w.movespeed = 0.1;
 	w.rotspeed = 0.1;
 	w.posx = 3;

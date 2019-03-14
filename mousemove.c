@@ -4,25 +4,25 @@ int		mouse_move(int x, int y, t_pr *w)
 {
 	mlx_clear_window(w->mlx_ptr, w->win_ptr);
 	ft_bzero(w->imgdata, sizeof(int) * WW * WH);
-	if (x >= 0 && x <= 512 && y >= 0 && y <= 384)
+	if (x >= 0 && x <= WW && y >= 0 && y <= WH)
 	{
 		if (x < w->prevxmouse)
 		{
 			w->olddirx = w->dirx;
-			w->dirx = w->dirx * cos(0.03 * (w->prevxmouse - x)) - w->diry * sin(0.03 * (w->prevxmouse - x));
-			w->diry = w->olddirx * sin(0.03 * (w->prevxmouse - x)) + w->diry * cos(0.03 * (w->prevxmouse - x));
+			w->dirx = w->dirx * cos(0.02 * (w->prevxmouse - x)) - w->diry * sin(0.02 * (w->prevxmouse - x));
+			w->diry = w->olddirx * sin(0.02 * (w->prevxmouse - x)) + w->diry * cos(0.02 * (w->prevxmouse - x));
 			w->oldplanex = w->planex;
-			w->planex = w->planex * cos(0.03 * (w->prevxmouse - x)) - w->planey * sin(0.03 * (w->prevxmouse - x));
-			w->planey = w->oldplanex * sin(0.03 * (w->prevxmouse - x)) + w->planey * cos(0.03 * (w->prevxmouse - x));
+			w->planex = w->planex * cos(0.02 * (w->prevxmouse - x)) - w->planey * sin(0.02 * (w->prevxmouse - x));
+			w->planey = w->oldplanex * sin(0.02 * (w->prevxmouse - x)) + w->planey * cos(0.02 * (w->prevxmouse - x));
 		}
 		else if (x > w->prevxmouse)
 		{
 			w->olddirx = w->dirx;
-			w->dirx = w->dirx * cos(-0.03 * (x - w->prevxmouse)) - w->diry * sin(-0.03 * (x - w->prevxmouse));
-			w->diry = w->olddirx * sin(-0.03 * (x - w->prevxmouse)) + w->diry * cos(-0.03 * (x - w->prevxmouse));
+			w->dirx = w->dirx * cos(-0.02 * (x - w->prevxmouse)) - w->diry * sin(-0.02 * (x - w->prevxmouse));
+			w->diry = w->olddirx * sin(-0.02 * (x - w->prevxmouse)) + w->diry * cos(-0.02 * (x - w->prevxmouse));
 			w->oldplanex = w->planex;
-			w->planex = w->planex * cos(-0.03 * (x - w->prevxmouse)) - w->planey * sin(-0.03 * (x - w->prevxmouse));
-			w->planey = w->oldplanex * sin(-0.03 * (x - w->prevxmouse)) + w->planey * cos(-0.03 * (x - w->prevxmouse));
+			w->planex = w->planex * cos(-0.02 * (x - w->prevxmouse)) - w->planey * sin(-0.02 * (x - w->prevxmouse));
+			w->planey = w->oldplanex * sin(-0.02 * (x - w->prevxmouse)) + w->planey * cos(-0.02 * (x - w->prevxmouse));
 		}
 	}
 	w->prevxmouse = x;

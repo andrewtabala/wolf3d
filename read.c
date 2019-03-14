@@ -21,7 +21,7 @@ void	readmap(t_pr *w)
 			w->map[i][k] = ft_atoi(&line[k]);
 			k++;
 		}
-		line = NULL;
+		free(line);
 		k = 0;
 		i++;
 	}

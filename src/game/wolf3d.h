@@ -1,9 +1,9 @@
 #ifndef WOLF3D_H
 # define WOLF3D_H
 
-# include "minilibx_macos/mlx.h"
-# include "get_next_line/get_next_line.h"
-# include "libft/libft.h"
+# include "../../minilibx_macos/mlx.h"
+# include "../../get_next_line/get_next_line.h"
+# include "../../libft/libft.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>

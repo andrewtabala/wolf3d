@@ -16,17 +16,17 @@ $(NAME):
 		gcc $(CFLAG) $(FLAGS) *.c; \
 		ar rc $(NAMEL) *.o
 	@echo "$(BOLD)$(NAMEL)	$(GREEN)$(UNDERLINE)was created$(RESET)" 
-	gcc  -I /usr/local/include wolf3d.c\
+	gcc  -I /usr/local/include src/game/wolf3d.c\
 		get_next_line/get_next_line.c \
 		libft/libft.a \
-		read.c \
-		parsemap.c \
-		textures.c \
-		keyactions.c \
-		mousemove.c \
-		draw.c \
-		drawline.c \
-		img.c \
+		src/game/read.c \
+		src/game/parsemap.c \
+		src/game/textures.c \
+		src/controls/keyactions.c \
+		src/controls/mousemove.c \
+		src/game/draw.c \
+		src/game/drawline.c \
+		src/game/img.c \
 		-L /usr/local/lib \
 		-lmlx -framework OpenGL \
 		-framework Appkit \

@@ -1,4 +1,4 @@
-#include "wolf3d.h"
+#include "../game/wolf3d.h"
 
 void		move(int i, t_pr *w)
 {

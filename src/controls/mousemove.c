@@ -1,4 +1,4 @@
-#include "wolf3d.h"
+#include "../game/wolf3d.h"
 
 int		mouse_move(int x, int y, t_pr *w)
 {

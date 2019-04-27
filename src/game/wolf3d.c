@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 {
 	t_pr	w;
 	int 	wid = 64;
-	int 	hei = 64;
+	int 	hei = 64;	
 
 	w.win_width = 1024;
 	w.win_height = 576;
@@ -63,11 +63,6 @@ int main(int argc, char **argv)
 	w.planey = 0.66;
 	setup_controls(&w);
 	readmap(&w);
-	/*if (parsemap(&w) == 1)
-	{
-		printf("%s\n", "Invalid map");
-		exit(0);
-	}*/
 	img(&w);
 	settextures(&w);
 	draw(&w);

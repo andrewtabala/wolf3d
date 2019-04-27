@@ -68,20 +68,18 @@ void	draw(t_pr *w)
 			if (w->drawend >= WH)
 				w->drawend = WH - 1;
 			if (w->map[w->mapx][w->mapy] == 1)
-				w->color = 10604827;
+				w->texture = w->img_stone_data;
 			else if (w->map[w->mapx][w->mapy] == 2)
-				w->color = 1778897;
+				w->texture = w->img_sand_data;
 			else if (w->map[w->mapx][w->mapy] == 3)
-				w->color = 13704097;
+				w->texture = w->img_redbrick_data;
 			else if (w->map[w->mapx][w->mapy] == 4)
-				w->color = 13703966;
-			else if (w->map[w->mapx][w->mapy] == 5)
-				w->color = 13357339;
-			else if (w->map[w->mapx][w->mapy] == 6)
-				w->color = 1823182;	
+				w->texture = w->img_mossy_data;
+			else
+				w->texture = w->img_mossy_data;	
 			if (w->side == 1)
 				w->color /= 2;
-			drawline(x, w);
+			drawline(w->texture, x, w);
 			x++;
 	}
 }

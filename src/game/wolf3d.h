@@ -26,14 +26,26 @@ typedef struct  	s_pr
 
 	void	*win_minimap;
 
+
+
 	void	*img_ptr;
-	void	*img_stone;
-	void	*img_mossy;	
-	void	*img_redbrick;
-	void	*img_sand;
-	void	*img_sky;
-	void	*img_wood;
 	int		*imgdata;
+
+	void	*img_stone;
+	int		*img_stone_data;
+
+	void	*img_mossy;	
+	int 	*img_mossy_data;
+
+	void	*img_redbrick;
+	int 	*img_redbrick_data;
+
+	void	*img_sand;
+	int 	*img_sand_data;
+
+	void	*img_sky;
+	int 	*img_sky_data;
+
 
 
 	double	posx;
@@ -77,6 +89,7 @@ typedef struct  	s_pr
 	
 	char	*argv;
 	int		color;
+	int 	*texture;
 }					t_pr;
 
 void	readmap(t_pr *w);
@@ -86,7 +99,7 @@ void	img(t_pr *w);
 
 void	settextures(t_pr *w);
 void	draw(t_pr *w);
-void	drawline(int x, t_pr *w);
+void	drawline(int *texture, int x, t_pr *w);
 void	move(int i, t_pr *w);
 int		parsemap(t_pr *w);
 

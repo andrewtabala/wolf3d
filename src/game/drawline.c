@@ -6,14 +6,19 @@ void				drawline(int *texture, int x, t_pr *w)
 	int k;
 	int iter;
 	int	text;
+	double wallX;
 
+	if (side == 0)
+		wallX = w->posy + w->perpwalldist * w->raydiry;
+	else
+		wallX = w->posy + w->perpwalldist * w->raydirx;
+	wallX -= floor((wallX));
 	text = 0;
 	k = 0;
 	i = w->drawstart;
 	iter = (w->drawend - i) / 64;
 	if (iter == 0)
 		iter = 1;
-	printf("%d\n", iter);
 	while (i != w->drawend)
 	{
 		if ((x >= 0 && x < WW) && (i >= 0 && i < WH))
@@ -35,5 +40,4 @@ void				drawline(int *texture, int x, t_pr *w)
 			i--;
 		k++;
 	}
-	printf("%d\n", text);
 }

@@ -39,8 +39,10 @@ void	draw(t_pr *w)
 				w->stepy = 1;
 				w->sidedisty = (w->mapy + 1.0 - w->posy) * w->deltadisty;
 			}
+			w->prevp = w->map[w->mapx][w->mapy];
 			while (w->hit == 0)
 			{
+				
 				if (w->sidedistx < w->sidedisty)
 				{
 					w->sidedistx += w->deltadistx;
@@ -53,9 +55,14 @@ void	draw(t_pr *w)
 					w->mapy += w->stepy;
 					w->side = 1;
 				}
+				
 				if (w->map[w->mapx][w->mapy] != 0)
-					w->hit = 1;
+					w->hit = 1;	
 			}
+			if (w->prevp == w->map[w->mapx][w->mapy] && w->prevp != 0)
+					w->x_text++;
+				else
+					w->x_text = 0;
 			if (w->side == 0)
 				w->perpwalldist = (w->mapx - w->posx + (1 - w->stepx) / 2) / w->raydirx;
 			else	

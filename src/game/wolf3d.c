@@ -61,6 +61,8 @@ int main(int argc, char **argv)
 	w.diry = 0;
 	w.planex = 0;
 	w.planey = 0.66;
+	w.prevp = 1;
+	w.x_text = 0;
 	setup_controls(&w);
 	readmap(&w);
 	img(&w);

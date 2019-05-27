@@ -90,6 +90,9 @@ typedef struct  	s_pr
 	char	*argv;
 	int		color;
 	int 	*texture;
+
+	int		prevp;
+	int		x_text;
 }					t_pr;
 
 void	readmap(t_pr *w);

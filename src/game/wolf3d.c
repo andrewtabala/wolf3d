@@ -19,6 +19,8 @@ int			key_press(int key, void *param)
 		move(key, w);
 	if (key == 257 || key == 258)
 		w->movespeed = 0.3;
+	if (key == 17)
+		textured(w);
 	return (0);
 }
 
@@ -63,6 +65,7 @@ int main(int argc, char **argv)
 	w.planey = 0.66;
 	w.prevp = 1;
 	w.x_text = 0;
+	w.textured = 1;
 	setup_controls(&w);
 	readmap(&w);
 	img(&w);

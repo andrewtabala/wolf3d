@@ -93,6 +93,8 @@ typedef struct  	s_pr
 
 	int		prevp;
 	int		x_text;
+
+	int 	textured;
 }					t_pr;
 
 void	readmap(t_pr *w);
@@ -102,7 +104,9 @@ void	img(t_pr *w);
 
 void	settextures(t_pr *w);
 void	draw(t_pr *w);
-void	drawline(int *texture, int x, t_pr *w);
+void	drawline_textured(int *texture, int x, t_pr *w);
+void	drawline_untextured(int x, t_pr *w);
+void	textured(t_pr *w);
 void	move(int i, t_pr *w);
 int		parsemap(t_pr *w);
 

@@ -25,7 +25,8 @@ $(NAME):
 		src/controls/keyactions.c \
 		src/controls/mousemove.c \
 		src/game/draw.c \
-		src/game/drawline.c \
+		src/game/drawline_textured.c \
+		src/game/drawline_untextured.c \
 		src/game/img.c \
 		-L /usr/local/lib \
 		-lmlx -framework OpenGL \

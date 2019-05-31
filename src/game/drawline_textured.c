@@ -1,18 +1,32 @@
 #include "wolf3d.h"
 
-void				drawline(int *texture, int x, t_pr *w)
+static void	floordraw(int i, int x, t_pr *w)
+{
+	while (i != 0 && i != WH)
+	{
+		if ((x >= 0 && x < WW) && (i >= 0 && i < WH))
+			w->imgdata[i * WW + x] = 5719381;
+		i++;
+	}	
+}
+
+static void	ceilingdraw(int i, int x, t_pr *w)
+{
+	while (i != 0 && i != WH)
+	{
+		if ((x >= 0 && x < WW) && (i >= 0 && i < WH))
+			w->imgdata[i * WW + x] = 6165077;
+		i--;
+	}
+}
+
+void		drawline_textured(int *texture, int x, t_pr *w)
 {
 	int i;
 	int k;
 	int iter;
 	int	text;
-	double wallX;
 
-	if (side == 0)
-		wallX = w->posy + w->perpwalldist * w->raydiry;
-	else
-		wallX = w->posy + w->perpwalldist * w->raydirx;
-	wallX -= floor((wallX));
 	text = 0;
 	k = 0;
 	i = w->drawstart;
@@ -40,4 +54,8 @@ void				drawline(int *texture, int x, t_pr *w)
 			i--;
 		k++;
 	}
+	floordraw(i, x, w);
+	i = w->drawstart;
+	ceilingdraw(i, x, w);
+	
 }

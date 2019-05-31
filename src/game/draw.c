@@ -74,19 +74,32 @@ void	draw(t_pr *w)
 			w->drawend = w->lineheight / 2 + WH / 2;
 			if (w->drawend >= WH)
 				w->drawend = WH - 1;
-			if (w->map[w->mapx][w->mapy] == 1)
-				w->texture = w->img_stone_data;
-			else if (w->map[w->mapx][w->mapy] == 2)
-				w->texture = w->img_sand_data;
-			else if (w->map[w->mapx][w->mapy] == 3)
-				w->texture = w->img_redbrick_data;
-			else if (w->map[w->mapx][w->mapy] == 4)
-				w->texture = w->img_mossy_data;
+			if (w->textured == 1)
+			{
+				if (w->map[w->mapx][w->mapy] == 1)
+					w->texture = w->img_stone_data;
+				else if (w->map[w->mapx][w->mapy] == 2)
+					w->texture = w->img_sand_data;
+				else if (w->map[w->mapx][w->mapy] == 3)
+					w->texture = w->img_redbrick_data;
+				else
+					w->texture = w->img_mossy_data;
+				drawline_textured(w->texture, x, w);
+			}
 			else
-				w->texture = w->img_mossy_data;	
-			if (w->side == 1)
-				w->color /= 2;
-			drawline(w->texture, x, w);
+			{
+				if (w->map[w->mapx][w->mapy] == 1)
+					w->color = 11248298;
+				else if (w->map[w->mapx][w->mapy] == 2)
+					w->color = 12556376;
+				else if (w->map[w->mapx][w->mapy] == 3)
+					w->color = 9381672;
+				else
+					w->color = 3105077;
+				if (w->side == 1)
+					w->color /= 2;
+				drawline_untextured(x, w);
+			}
 			x++;
 	}
 }

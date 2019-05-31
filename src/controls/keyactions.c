@@ -1,5 +1,19 @@
 #include "../game/wolf3d.h"
 
+void		textured(t_pr *w)
+{
+	mlx_clear_window(w->mlx_ptr, w->win_ptr);
+	ft_bzero(w->imgdata, sizeof(int) * WW * WH);
+	if (w->textured == 0)
+		w->textured = 1;
+	else
+		w->textured = 0;
+	draw(w);
+	mlx_put_image_to_window(w->mlx_ptr, w->win_ptr,
+		w->img_ptr, 0, 0);
+	mlx_loop(w->mlx_ptr);
+}
+
 void		move(int i, t_pr *w)
 {
 	mlx_clear_window(w->mlx_ptr, w->win_ptr);

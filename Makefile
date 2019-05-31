@@ -20,7 +20,6 @@ $(NAME):
 		get_next_line/get_next_line.c \
 		libft/libft.a \
 		src/game/read.c \
-		src/game/parsemap.c \
 		src/game/textures.c \
 		src/controls/keyactions.c \
 		src/controls/mousemove.c \

@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:40:16 by atabala           #+#    #+#             */
-/*   Updated: 2019/05/31 17:47:15 by atabala          ###   ########.fr       */
+/*   Updated: 2019/05/31 18:06:03 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	indentation(char *argv, t_pr *w)
 {
-	int 	wid = 64;
-	int 	hei = 64;
-
+	INIT;
 	w->win_width = 1024;
 	w->win_height = 576;
 	w->mlx_ptr = mlx_init();
-	w->win_ptr = mlx_new_window(w->mlx_ptr, w->win_width, w->win_height, "wolf3d");
+	w->win_ptr =
+		mlx_new_window(w->mlx_ptr, w->win_width, w->win_height, "wolf3d");
 	w->argv = argv;
 	w->prevxmouse = w->win_width / 2;
 	w->movespeed = 0.1;

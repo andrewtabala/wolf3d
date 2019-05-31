@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:25:23 by atabala           #+#    #+#             */
-/*   Updated: 2019/05/31 17:49:36 by atabala          ###   ########.fr       */
+/*   Updated: 2019/05/31 17:59:03 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int			closewin(void *param)
 {
-    (void)param;
-    exit(0);
-    return (0);
+	(void)param;
+	exit(0);
+	return (0);
 }
 
 int			key_press(int key, void *param)
@@ -57,12 +57,13 @@ void		setup_controls(t_pr *w)
 int			main(int argc, char **argv)
 {
 	t_pr	w;
+
 	indentation(argv[1], &w);
-    setup_controls(&w);
-    readmap(&w);
-    img(&w);
-    settextures(&w);
-    draw(&w);
+	setup_controls(&w);
+	readmap(&w);
+	img(&w);
+	settextures(&w);
+	draw(&w);
 	mlx_put_image_to_window(w.mlx_ptr, w.win_ptr,
 		w.img_ptr, 0, 0);
 	mlx_loop(w.mlx_ptr);

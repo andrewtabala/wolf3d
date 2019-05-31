@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   wolf3d.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/31 17:59:30 by atabala           #+#    #+#             */
+/*   Updated: 2019/05/31 18:05:46 by atabala          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WOLF3D_H
 # define WOLF3D_H
 
@@ -11,104 +23,101 @@
 
 # define WW w->win_width
 # define WH w->win_height
+# define INIT int wid;int hei;wid=64;hei=64
 
-typedef struct  	s_pr
+typedef struct		s_pr
 {
-	int		fd;
-	int		**map;
-	char	**parsemap;
+	int				fd;
+	int				**map;
+	char			**parsemap;
 
-	void	*mlx_ptr;
-	void	*win_ptr;
+	void			*mlx_ptr;
+	void			*win_ptr;
 
-	int		win_width;
-	int		win_height;
+	int				win_width;
+	int				win_height;
 
-	void	*win_minimap;
+	void			*win_minimap;
 
+	void			*img_ptr;
+	int				*imgdata;
 
+	void			*img_t1;
+	int				*img_t1_d;
 
-	void	*img_ptr;
-	int		*imgdata;
+	void			*img_t4;
+	int				*img_t4_d;
 
-	void	*img_t1;
-	int		*img_t1_d;
+	void			*img_t3;
+	int				*img_t3_d;
 
-	void	*img_t4;	
-	int 	*img_t4_d;
+	void			*img_t2;
+	int				*img_t2_d;
 
-	void	*img_t3;
-	int 	*img_t3_d;
+	void			*img_sky;
+	int				*img_sky_d;
 
-	void	*img_t2;
-	int 	*img_t2_d;
+	double			posx;
+	double			posy;
+	double			dirx;
+	double			diry;
+	double			planex;
+	double			planey;
 
-	void	*img_sky;
-	int 	*img_sky_d;
+	double			camerax;
+	double			raydirx;
+	double			raydiry;
 
+	int				mapx;
+	int				mapy;
+	double			sidedistx;
+	double			sidedisty;
+	double			deltadistx;
+	double			deltadisty;
+	double			perpwalldist;
+	int				stepx;
+	int				stepy;
 
+	double			olddirx;
+	double			oldplanex;
 
-	double	posx;
-	double	posy;
-	double	dirx;
-	double	diry;
-	double	planex;
-	double	planey;
+	double			movespeed;
+	double			rotspeed;
 
-	double	camerax;
-	double	raydirx;
-	double	raydiry;
+	int				hit;
+	int				side;
 
-	int		mapx;
-	int		mapy;
-	double	sidedistx;
-	double	sidedisty;
-	double	deltadistx;
-	double	deltadisty;
-	double	perpwalldist;
-	int		stepx;
-	int		stepy;
+	int				lineheight;
+	int				drawstart;
+	int				drawend;
 
-	double	olddirx;
-	double	oldplanex;
+	int				mapwidth;
+	int				mapheight;
 
-	double	movespeed;
-	double	rotspeed;
-	
-	int		hit;
-	int		side;
+	int				prevxmouse;
 
-	int		lineheight;
-	int		drawstart;
-	int		drawend;
+	char			*argv;
+	int				color;
+	int				*texture;
 
-	int		mapwidth;
-	int		mapheight;
+	int				prevp;
+	int				x_text;
 
-	int		prevxmouse;
-	
-	char	*argv;
-	int		color;
-	int 	*texture;
-
-	int		prevp;
-	int		x_text;
-
-	int 	textured;
+	int				textured;
 }					t_pr;
 
-void	readmap(t_pr *w);
-int		mouse_move(int x, int y, t_pr *w);
-void	count(t_pr *w);
-void	img(t_pr *w);
+void				readmap(t_pr *w);
+int					mouse_move(int x, int y, t_pr *w);
+void				count(t_pr *w);
+void				img(t_pr *w);
 
-void	settextures(t_pr *w);
-void	draw(t_pr *w);
-void	drawline_textured(int *texture, int x, t_pr *w);
-void	drawline_untextured(int x, t_pr *w);
-void	textured(t_pr *w);
-void	indentation(char *argv, t_pr *w);
-void	move(int i, t_pr *w);
-int		parsemap(t_pr *w);
+void				settextures(t_pr *w);
+void				draw(t_pr *w);
+void				drawline_textured(int *texture, int x, t_pr *w);
+void				drawline_untextured(int x, t_pr *w);
+void				textured(t_pr *w);
+void				indentation(char *argv, t_pr *w);
+void				move(int i, t_pr *w);
+int					parsemap(t_pr *w);
 
 #endif

@@ -27,6 +27,7 @@ $(NAME):
 		src/game/draw.c \
 		src/game/drawline_textured.c \
 		src/game/drawline_untextured.c \
+		src/game/indentation.c \
 		src/game/img.c \
 		-L /usr/local/lib \
 		-lmlx -framework OpenGL \

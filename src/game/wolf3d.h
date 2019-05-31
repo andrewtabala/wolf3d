@@ -107,6 +107,7 @@ void	draw(t_pr *w);
 void	drawline_textured(int *texture, int x, t_pr *w);
 void	drawline_untextured(int x, t_pr *w);
 void	textured(t_pr *w);
+void	indentation(char *argv, t_pr *w);
 void	move(int i, t_pr *w);
 int		parsemap(t_pr *w);
 

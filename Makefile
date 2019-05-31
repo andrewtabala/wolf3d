@@ -26,6 +26,7 @@ $(NAME):
 		src/game/draw.c \
 		src/game/drawline_textured.c \
 		src/game/drawline_untextured.c \
+		src/game/draw_set_textures.c \
 		src/game/indentation.c \
 		src/game/img.c \
 		-L /usr/local/lib \

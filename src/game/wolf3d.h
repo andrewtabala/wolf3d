@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:59:30 by atabala           #+#    #+#             */
-/*   Updated: 2019/05/31 18:14:52 by atabala          ###   ########.fr       */
+/*   Updated: 2019/05/31 18:47:15 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,8 @@ void				count(t_pr *w);
 void				img(t_pr *w);
 
 void				settextures(t_pr *w);
+void				set_textures(int x, t_pr *w);
+void				set_color(int x, t_pr *w);
 void				draw(t_pr *w);
 void				drawline_textured(int *texture, int x, t_pr *w);
 void				drawline_untextured(int x, t_pr *w);

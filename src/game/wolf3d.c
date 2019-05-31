@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:25:23 by atabala           #+#    #+#             */
-/*   Updated: 2019/05/31 17:59:03 by atabala          ###   ########.fr       */
+/*   Updated: 2019/05/31 18:35:27 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ int			main(int argc, char **argv)
 	draw(&w);
 	mlx_put_image_to_window(w.mlx_ptr, w.win_ptr,
 		w.img_ptr, 0, 0);
+	mlx_put_image_to_window(w.mlx_ptr, w.win_ptr,
+		w.img_awp,500, 200);
 	mlx_loop(w.mlx_ptr);
 }

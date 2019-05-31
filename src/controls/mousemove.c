@@ -29,6 +29,8 @@ int		mouse_move(int x, int y, t_pr *w)
 	draw(w);
 	mlx_put_image_to_window(w->mlx_ptr, w->win_ptr,
 		w->img_ptr, 0, 0);
+	mlx_put_image_to_window(w->mlx_ptr, w->win_ptr,
+		w->img_awp,500, 200);
 	mlx_loop(w->mlx_ptr);
 	return(0);
 }

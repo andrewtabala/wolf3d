@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:59:30 by atabala           #+#    #+#             */
-/*   Updated: 2019/05/31 18:05:46 by atabala          ###   ########.fr       */
+/*   Updated: 2019/05/31 18:14:52 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ typedef struct		s_pr
 
 	void			*img_t2;
 	int				*img_t2_d;
+
+	void			*img_awp;
+	int				*img_awp_d;
 
 	void			*img_sky;
 	int				*img_sky_d;

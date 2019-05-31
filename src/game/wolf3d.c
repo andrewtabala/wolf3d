@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   wolf3d.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/31 17:25:23 by atabala           #+#    #+#             */
+/*   Updated: 2019/05/31 17:39:24 by atabala          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "wolf3d.h"
 
- int closewin(void *param)
+int			closewin(void *param)
 {
     (void)param;
     exit(0);
@@ -42,7 +54,7 @@ void		setup_controls(t_pr *w)
 	mlx_hook(w->win_ptr, 17, 0, closewin, w);
 }
 
-int main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_pr	w;
 	int 	wid = 64;

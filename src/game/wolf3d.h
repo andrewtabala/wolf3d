@@ -31,20 +31,20 @@ typedef struct  	s_pr
 	void	*img_ptr;
 	int		*imgdata;
 
-	void	*img_stone;
-	int		*img_stone_data;
+	void	*img_t1;
+	int		*img_t1_d;
 
-	void	*img_mossy;	
-	int 	*img_mossy_data;
+	void	*img_t4;	
+	int 	*img_t4_d;
 
-	void	*img_redbrick;
-	int 	*img_redbrick_data;
+	void	*img_t3;
+	int 	*img_t3_d;
 
-	void	*img_sand;
-	int 	*img_sand_data;
+	void	*img_t2;
+	int 	*img_t2_d;
 
 	void	*img_sky;
-	int 	*img_sky_data;
+	int 	*img_sky_d;
 
 
 

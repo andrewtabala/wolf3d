@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   drawline_untextured.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/31 17:13:29 by atabala           #+#    #+#             */
+/*   Updated: 2019/05/31 17:14:02 by atabala          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "wolf3d.h"
 
 static void	floordraw(int i, int x, t_pr *w)
@@ -7,7 +19,7 @@ static void	floordraw(int i, int x, t_pr *w)
 		if ((x >= 0 && x < WW) && (i >= 0 && i < WH))
 			w->imgdata[i * WW + x] = 5719381;
 		i++;
-	}	
+	}
 }
 
 static void	ceilingdraw(int i, int x, t_pr *w)
@@ -44,5 +56,4 @@ void		drawline_untextured(int x, t_pr *w)
 	floordraw(i, x, w);
 	i = w->drawstart;
 	ceilingdraw(i, x, w);
-	
 }

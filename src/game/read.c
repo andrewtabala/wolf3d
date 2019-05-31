@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/31 17:14:31 by atabala           #+#    #+#             */
+/*   Updated: 2019/05/31 17:16:09 by atabala          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "wolf3d.h"
 
-void	readmap(t_pr *w)
+void		readmap(t_pr *w)
 {
-	int 	i;
+	int		i;
 	int		k;
 	char	*line;
 
@@ -10,13 +22,10 @@ void	readmap(t_pr *w)
 	i = 0;
 	w->fd = open(w->argv, O_RDONLY);
 	w->map = (int**)malloc(4096 * sizeof(int*));
-	w->parsemap = (char**)malloc(4096 * sizeof(char*));
 	while (get_next_line(w->fd, &line) > 0)
 	{
 		w->map[i] = (int*)malloc(4096 * sizeof(int));
-		w->parsemap[i] = (char*)malloc(4096 * sizeof(char));
-		w->parsemap[i] = line;
-		while(line[k])
+		while (line[k])
 		{
 			w->map[i][k] = ft_atoi(&line[k]);
 			k++;
@@ -25,19 +34,6 @@ void	readmap(t_pr *w)
 		k = 0;
 		i++;
 	}
-	w->mapheight = i;
 	w->map[i] = NULL;
-	w->parsemap[i] = NULL;
-	count(w);
 	close(w->fd);
-}
-
-void	count(t_pr *w)
-{
-	int		k;
-
-	k = 0;
-	while (w->parsemap[1][k])
-		k++;
-	w->mapwidth = k;
 }

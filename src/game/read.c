@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:14:31 by atabala           #+#    #+#             */
-/*   Updated: 2019/05/31 17:16:09 by atabala          ###   ########.fr       */
+/*   Updated: 2019/06/03 16:44:05 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ void		readmap(t_pr *w)
 		w->map[i] = (int*)malloc(4096 * sizeof(int));
 		while (line[k])
 		{
+			if (ft_isdigit(line[k]) == 0 && line[k] != ' ')
+			{
+				ft_putstr("Invalid map\n");
+				exit (0);
+			}
 			w->map[i][k] = ft_atoi(&line[k]);
 			k++;
 		}

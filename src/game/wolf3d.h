@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:59:30 by atabala           #+#    #+#             */
-/*   Updated: 2019/05/31 18:47:15 by atabala          ###   ########.fr       */
+/*   Updated: 2019/06/03 15:51:43 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,6 @@ void				drawline_untextured(int x, t_pr *w);
 void				textured(t_pr *w);
 void				indentation(char *argv, t_pr *w);
 void				move(int i, t_pr *w);
-int					parsemap(t_pr *w);
+void				validation(int argc, char **argv, t_pr *w);
 
 #endif

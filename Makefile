@@ -29,6 +29,7 @@ $(NAME):
 		src/game/draw_set_textures.c \
 		src/game/indentation.c \
 		src/game/img.c \
+		src/validation/validation.c \
 		-L /usr/local/lib \
 		-lmlx -framework OpenGL \
 		-framework Appkit \

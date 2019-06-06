@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:47:21 by atabala           #+#    #+#             */
-/*   Updated: 2019/06/03 18:01:32 by atabala          ###   ########.fr       */
+/*   Updated: 2019/06/06 13:48:57 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		validation(int argc, char **argv, t_pr *w)
 	{
 		ft_putstr("You should call one and only one argument\n");
 		ft_putstr("Usage: ./wolf3d map_name\n");
-		exit (0);
+		exit(0);
 	}
 	i = open(argv[1], O_RDONLY);
 	if ((i < 0) || (read(i, buff, 1) != 1))
@@ -36,7 +36,7 @@ void		validation(int argc, char **argv, t_pr *w)
 		ft_putstr("Usage: ./wolf3d map_name\n");
 		free(buff);
 		close(i);
-		exit (0);
+		exit(0);
 	}
 	free(buff);
 	close(i);

@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:25:23 by atabala           #+#    #+#             */
-/*   Updated: 2019/06/03 18:28:20 by atabala          ###   ########.fr       */
+/*   Updated: 2019/06/08 15:49:02 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void		setup_controls(t_pr *w)
 int			main(int argc, char **argv)
 {
 	t_pr	w;
-	
+
 	validation(argc, argv, &w);
 	setup_controls(&w);
 	img(&w);

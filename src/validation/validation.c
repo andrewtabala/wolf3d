@@ -6,16 +6,11 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:47:21 by atabala           #+#    #+#             */
-/*   Updated: 2019/06/06 13:48:57 by atabala          ###   ########.fr       */
+/*   Updated: 2019/06/08 15:15:11 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../game/wolf3d.h"
-
-static void	validate_map(t_pr *w)
-{
-
-}
 
 void		validation(int argc, char **argv, t_pr *w)
 {

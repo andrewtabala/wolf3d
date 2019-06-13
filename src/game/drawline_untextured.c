@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:13:29 by atabala           #+#    #+#             */
-/*   Updated: 2019/05/31 17:14:02 by atabala          ###   ########.fr       */
+/*   Updated: 2019/06/08 14:50:33 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static void	ceilingdraw(int i, int x, t_pr *w)
 {
 	while (i != 0 && i != WH)
 	{
+		i--;
 		if ((x >= 0 && x < WW) && (i >= 0 && i < WH))
 			w->imgdata[i * WW + x] = 6165077;
-		i--;
 	}
 }
 

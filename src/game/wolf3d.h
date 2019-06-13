@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:59:30 by atabala           #+#    #+#             */
-/*   Updated: 2019/06/03 15:51:43 by atabala          ###   ########.fr       */
+/*   Updated: 2019/06/13 14:58:06 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,17 @@ typedef struct		s_pr
 
 	void			*img_t2;
 	int				*img_t2_d;
+	int				t_wh;
 
 	void			*img_awp;
 	int				*img_awp_d;
+	int				awp_w;
+	int				awp_h;
 
 	void			*img_sky;
 	int				*img_sky_d;
+	int				sky_w;
+	int				sky_h;
 
 	double			posx;
 	double			posy;
@@ -105,6 +110,9 @@ typedef struct		s_pr
 
 	int				prevp;
 	int				x_text;
+
+	int				texi;
+	int				texd;
 
 	int				textured;
 }					t_pr;

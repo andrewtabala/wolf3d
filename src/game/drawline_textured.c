@@ -6,11 +6,20 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:44:06 by atabala           #+#    #+#             */
-/*   Updated: 2019/06/03 15:45:06 by atabala          ###   ########.fr       */
+/*   Updated: 2019/06/13 14:49:08 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
+
+static int	kostil(int texx, t_pr *w)
+{
+	if (w->side == 0 && w->raydirx > 0)
+		texx = w->t_wh - texx - 1;
+	if (w->side == 1 && w->raydiry < 0)
+		texx = w->t_wh - texx - 1;
+	return (texx);
+}
 
 static void	floordraw(int i, int x, t_pr *w)
 {
@@ -34,39 +43,28 @@ static void	ceilingdraw(int i, int x, t_pr *w)
 
 void		drawline_textured(int *texture, int x, t_pr *w)
 {
-	int i;
-	int k;
-	int iter;
-	int	text;
+	int		iter;
+	int		texnum;
+	double	wallx;
+	int		texy;
+	int		texx;
 
-	text = 0;
-	k = 0;
-	i = w->drawstart;
-	iter = (w->drawend - i) / 64;
-	if (iter == 0)
-		iter = 1;
-	while (i != w->drawend)
+	texnum = w->map[w->mapx][w->mapy] - 1;
+	w->texi = w->drawstart;
+	if (w->side == 0)
+		wallx = w->posy + w->perpwalldist * w->raydiry;
+	else
+		wallx = w->posx + w->perpwalldist * w->raydirx;
+	wallx -= floor((wallx));
+	texx = (int)(wallx * (double)(w->t_wh));
+	kostil(texx, w);
+	while (w->texi != w->drawend)
 	{
-		if ((x >= 0 && x < WW) && (i >= 0 && i < WH))
-		{
-			if (k == iter && text < 64)
-			{
-				k = 0;
-				text++;
-			}
-			w->imgdata[i * WW + x] = texture[x + 64 * text];
-		}
-		if (w->drawend > WH && i == WH)
-			break ;
-		else if (w->drawend < 0 && i == 0)
-			break ;
-		if (i < w->drawend)
-			i++;
-		else
-			i--;
-		k++;
+		w->texd = w->texi * 256 - WH * 128 + w->lineheight * 128;
+		texy = ((w->texd * w->t_wh) / w->lineheight) / 256;
+		w->imgdata[w->texi * WW + x] = texture[texnum + w->t_wh * texy + texx];
+		w->texi++;
 	}
-	floordraw(i, x, w);
-	i = 0;
-	ceilingdraw(i, x, w);
+	floordraw(w->texi, x, w);
+	ceilingdraw(0, x, w);
 }

@@ -6,7 +6,7 @@
 /*   By: atabala <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:16:15 by atabala           #+#    #+#             */
-/*   Updated: 2019/06/03 15:43:34 by atabala          ###   ########.fr       */
+/*   Updated: 2019/06/08 14:40:44 by atabala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		settextures(t_pr *w)
 	hei = 64;
 	w->img_t1 = mlx_xpm_file_to_image(w->mlx_ptr, "text/t1.xpm", &wid, &hei);
 	w->img_t1_d = (int*)mlx_get_data_addr(w->img_t1, &bpp, &sl, &e);
-	w->img_t2 = mlx_xpm_file_to_image(w->mlx_ptr, "text/t2.xpm", &wid, &hei);
+	w->img_t2 = mlx_xpm_file_to_image(w->mlx_ptr, "text/wood.xpm", &wid, &hei);
 	w->img_t2_d = (int*)mlx_get_data_addr(w->img_t2, &bpp, &sl, &e);
 	w->img_t3 = mlx_xpm_file_to_image(w->mlx_ptr, "text/t3.xpm", &wid, &hei);
 	w->img_t3_d = (int*)mlx_get_data_addr(w->img_t3, &bpp, &sl, &e);

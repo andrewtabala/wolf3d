@@ -45,7 +45,8 @@ static void	kostil2(char *line, int k, int i, t_pr *w)
 		if ((ft_isdigit(line[k]) == 0 && line[k] != ' ') ||
 			(i == 0 && line[k] == '0') ||
 			(k == 0 && line[k] == '0') ||
-			(!line[k + 1] && line[k] == '0'))
+			(!line[k + 1] && line[k] == '0') ||
+			(i > 0 && w->maplen != ft_strlen(line)))
 		{
 			free(line);
 			inv();
@@ -77,6 +78,7 @@ void		readmap(t_pr *w)
 		free(line);
 		k = 0;
 		i++;
+		w->maplen = ft_strlen(line);
 	}
 	kostil(line, line2, i, w);
 }

@@ -31,6 +31,8 @@ typedef struct		s_pr
 	int				**map;
 	char			**parsemap;
 
+	int				maplen;
+
 	void			*mlx_ptr;
 	void			*win_ptr;
 

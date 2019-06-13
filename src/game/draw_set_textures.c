@@ -14,14 +14,28 @@
 
 void	set_textures(int x, t_pr *w)
 {
-	if (w->map[w->mapx][w->mapy] == 1)
-		w->texture = w->img_t1_d;
-	else if (w->map[w->mapx][w->mapy] == 2)
-		w->texture = w->img_t2_d;
-	else if (w->map[w->mapx][w->mapy] == 3)
-		w->texture = w->img_t3_d;
+	if (w->side == 1)
+	{
+		if (w->map[w->mapx][w->mapy] == 1)
+			w->texture = w->img_t1_d;
+		else if (w->map[w->mapx][w->mapy] == 2)
+			w->texture = w->img_t2_d;
+		else if (w->map[w->mapx][w->mapy] == 3)
+			w->texture = w->img_t3_d;
+		else
+			w->texture = w->img_t4_d;
+	}
 	else
-		w->texture = w->img_t4_d;
+	{
+		if (w->map[w->mapx][w->mapy] == 1)
+			w->texture = w->img_t1_1_d;
+		else if (w->map[w->mapx][w->mapy] == 2)
+			w->texture = w->img_t2_1_d;
+		else if (w->map[w->mapx][w->mapy] == 3)
+			w->texture = w->img_t3_1_d;
+		else
+			w->texture = w->img_t4_1_d;
+	}
 	drawline_textured(w->texture, x, w);
 }
 

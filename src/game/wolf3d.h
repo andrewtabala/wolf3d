@@ -53,6 +53,19 @@ typedef struct		s_pr
 
 	void			*img_t2;
 	int				*img_t2_d;
+
+	void			*img_t1_1;
+	int				*img_t1_1_d;
+
+	void			*img_t4_1;
+	int				*img_t4_1_d;
+
+	void			*img_t3_1;
+	int				*img_t3_1_d;
+
+	void			*img_t2_1;
+	int				*img_t2_1_d;
+
 	int				t_wh;
 
 	void			*img_awp;

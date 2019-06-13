@@ -6,7 +6,7 @@ void	controlsmenu(t_pr *w)
 	int col;
 
 	y = 0;
-	col = 14284172;
+	col = 1428412;
 	mlx_string_put(w->mlx_ptr, w->win_ptr, 60, y += 5, col,
 					"Controls");
 	mlx_string_put(w->mlx_ptr, w->win_ptr, 10, y += 65, col,

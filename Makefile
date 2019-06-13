@@ -30,6 +30,7 @@ $(NAME):
 		src/game/indentation.c \
 		src/game/img.c \
 		src/validation/validation.c \
+		minilibx_macos/libmlx.a \
 		-L /usr/local/lib \
 		-lmlx -framework OpenGL \
 		-framework Appkit \

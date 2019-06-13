@@ -37,5 +37,4 @@ void		validation(int argc, char **argv, t_pr *w)
 	close(i);
 	indentation(argv[1], w);
 	readmap(w);
-	validate_map(w);
 }

@@ -33,8 +33,6 @@ void		indentation(char *argv, t_pr *w)
 	w->prevxmouse = w->win_width / 2;
 	w->movespeed = 0.1;
 	w->rotspeed = 0.1;
-	w->posx = 3;
-	w->posy = 2;
 	w->dirx = -1;
 	w->diry = 0;
 	w->planex = 0;
@@ -42,5 +40,6 @@ void		indentation(char *argv, t_pr *w)
 	w->prevp = 1;
 	w->x_text = 0;
 	w->textured = 0;
+	w->found_coord = 0;
 	set_textures_demensions(w);
 }

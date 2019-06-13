@@ -52,6 +52,12 @@ static void	kostil2(char *line, int k, int i, t_pr *w)
 			inv();
 		}
 		w->map[i][k] = ft_atoi(&line[k]);
+		if (line[k] == '0' && w->found_coord == 0)
+		{
+			w->posy = k;
+			w->posx = i + 1;
+			w->found_coord = 1;
+		}
 		k++;
 	}
 }

@@ -28,7 +28,7 @@ static void	findhit(t_pr *w)
 			w->mapy += w->stepy;
 			w->side = 1;
 		}
-		if (w->map[w->mapx][w->mapy] != 0)
+		if (w->map[w->mapx][w->mapy] > 0)
 			w->hit = 1;
 	}
 	if (w->prevp == w->map[w->mapx][w->mapy] && w->prevp != 0)

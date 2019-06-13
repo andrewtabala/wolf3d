@@ -29,6 +29,7 @@ $(NAME):
 		src/game/draw_set_textures.c \
 		src/game/indentation.c \
 		src/game/img.c \
+		src/game/controlsmenu.c \
 		src/validation/validation.c \
 		minilibx_macos/libmlx.a \
 		-L /usr/local/lib \

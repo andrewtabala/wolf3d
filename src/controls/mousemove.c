@@ -57,6 +57,7 @@ int		mouse_move(int x, int y, t_pr *w)
 		w->img_ptr, 0, 0);
 	mlx_put_image_to_window(w->mlx_ptr, w->win_ptr,
 		w->img_awp, 500, 210);
+	controlsmenu(w);
 	mlx_loop(w->mlx_ptr);
 	return (0);
 }

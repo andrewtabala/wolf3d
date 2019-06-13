@@ -75,6 +75,7 @@ void		textured(t_pr *w)
 		w->img_ptr, 0, 0);
 	mlx_put_image_to_window(w->mlx_ptr, w->win_ptr,
 		w->img_awp, 500, 210);
+	controlsmenu(w);
 	mlx_loop(w->mlx_ptr);
 }
 
@@ -88,5 +89,6 @@ void		move(int i, t_pr *w)
 		w->img_ptr, 0, 0);
 	mlx_put_image_to_window(w->mlx_ptr, w->win_ptr,
 		w->img_awp, 500, 210);
+	controlsmenu(w);
 	mlx_loop(w->mlx_ptr);
 }

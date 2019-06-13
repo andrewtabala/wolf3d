@@ -132,5 +132,6 @@ void				textured(t_pr *w);
 void				indentation(char *argv, t_pr *w);
 void				move(int i, t_pr *w);
 void				validation(int argc, char **argv, t_pr *w);
+void				controlsmenu(t_pr *w);
 
 #endif

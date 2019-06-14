@@ -9,9 +9,3 @@ Compile and Run:
 
     make
     ./wolf3d maps/[map name]
-    
-    
-    
-*NOT FINISHED YET*
-
-*WORK IN PROGRESS*
